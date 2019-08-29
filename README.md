@@ -1,7 +1,7 @@
 # BlockChain_IMIE
 ## Projet NotarIO
 
-## A Faire :
+## TODO :
 - Signature des documents
 - IPFS ou en local
 - Clef publique / clef privée
