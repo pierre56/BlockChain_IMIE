@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La mort du notariat</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="https://apexembdesigns.com/sites/default/files/cuttable/13684/unicorn1.jpg" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-lg-12 d-flex" id="buttonContainer">
+          <button type="button" class="btn btn-lg btn-danger" onclick="addDocument()">AJOUTER UN DOCUMENT</button>
+      </div>
+        <div class="unicorn"></div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">NotariO</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <div id="petsRow" class="row">
+        <!-- DOCS LOAD HERE -->
+      </div>
+      <!--MENU AJOUT DE DOCU CHOIX-->
+      <div id="addDocument" class="row" style='display:none;'>
+        <div class="btn-container col-lg-12">
+          <button type="button" class="btn btn-lg btn-danger" onclick="AjouterDocument()">CREER UN DOCUMENT</button>
+          <button type="button" class="btn btn-lg btn-danger" onclick="CreerDocument()">AJOUTER UN DOCUMENT</button>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
+    </div>
+    <!--CREATION DOC FORM-->
+    <div id="CreateDocument" class="row" style='display:none;'>
+        <!--TODO lien du fichier à renseigner-->
+        <div class="col-lg-12 center">
+          <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Veuillez renseigner le lien du fichier à sauvegarder</label>
+                <input class="form-control" id="LinkDocument"  placeholder="Enter document link">
+              </div>
+            <button type="submit" class="btn btn-danger">Valider</button>
+          </form>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
+    </div>
+    <!--ENREGISTRER DOCUMENT-->
+    <div id="RegisterDocument" class="row" style='display:none;'>
+        <!--TODO FORM-->
+        <div class="col-lg-12 form-container">
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputName">NomSocieté</label>
+                <input type="email" class="form-control" id="inputName" placeholder="Name">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputDateDebut">Date Debut</label>
+                <input type="password" class="form-control" id="inputDateDebut" placeholder="Format JJ-MM-AAAA">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for="inputDateFin">Date Fin</label>
+                  <input type="password" class="form-control" id="inputDateFin" placeholder="Format JJ-MM-AAAA">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Addresse l'employé</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Adresse employé">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Addresse de l'entreprise'</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputPognon">Salaire</label>
+                <input type="text" class="form-control" id="inputPognon">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputContratType">Type Contrat</label>
+                <select id="inputContratType" class="form-control">
+                  <option selected>CDI</option>
+                  <option>CDD</option>
+                  <option>Stage</option>
+                  <option>Esclavage</option>
+                  <option>CA</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger">Valider</button>
+          </form>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
+    </div>
+
+    <div id="petTemplate" style="display: none;">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default panel-pet">
+          <div class="panel-heading">
+            <h3 class="panel-title">Scrappy</h3>
+          </div>
+          <div class="panel-body">
+            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
+            <br/><br/>
+            <strong>Date</strong>: <span class="date">test</span><br/>
+            <button class="btn btn-danger btn-read" type="button" data-id="0">Voir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

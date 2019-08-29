@@ -4,32 +4,103 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pete's Pet Shop</title>
-
-    <!-- Bootstrap -->
+    <title>La mort du notariat</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="https://apexembdesigns.com/sites/default/files/cuttable/13684/unicorn1.jpg" />
   </head>
   <body>
     <div class="container">
+      <div class="col-lg-12 d-flex" id="buttonContainer">
+          <button type="button" class="btn btn-lg btn-danger" onclick="addDocument()">AJOUTER UN DOCUMENT</button>
+      </div>
+        <div class="unicorn"></div>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Pete's Pet Shop</h1>
+          <h1 class="text-center">NotariO</h1>
           <hr/>
           <br/>
         </div>
       </div>
 
       <div id="petsRow" class="row">
-        <!-- PETS LOAD HERE -->
+        <!-- DOCS LOAD HERE -->
       </div>
+      <!--MENU AJOUT DE DOCU CHOIX-->
+      <div id="addDocument" class="row" style='display:none;'>
+        <div class="btn-container col-lg-12">
+          <button type="button" class="btn btn-lg btn-danger" onclick="AjouterDocument()">CREER UN DOCUMENT</button>
+          <button type="button" class="btn btn-lg btn-danger" onclick="CreerDocument()">AJOUTER UN DOCUMENT</button>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
+    </div>
+    <!--CREATION DOC FORM-->
+    <div id="CreateDocument" class="row" style='display:none;'>
+        <!--TODO lien du fichier à renseigner-->
+        <div class="col-lg-12 center">
+          <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Veuillez renseigner le lien du fichier à sauvegarder</label>
+                <input class="form-control" id="LinkDocument"  placeholder="Enter document link">
+              </div>
+            <button type="submit" class="btn btn-danger">Valider</button>
+          </form>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
+    </div>
+    <!--ENREGISTRER DOCUMENT-->
+    <div id="RegisterDocument" class="row" style='display:none;'>
+        <!--TODO FORM-->
+        <div class="col-lg-12 form-container">
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputName">NomSocieté</label>
+                <input type="email" class="form-control" id="inputName" placeholder="Name">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputDateDebut">Date Debut</label>
+                <input type="password" class="form-control" id="inputDateDebut" placeholder="Format JJ-MM-AAAA">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for="inputDateFin">Date Fin</label>
+                  <input type="password" class="form-control" id="inputDateFin" placeholder="Format JJ-MM-AAAA">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Addresse l'employé</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Adresse employé">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Addresse de l'entreprise'</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Ville</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputContratType">Type Contrat</label>
+                <select id="inputContratType" class="form-control">
+                  <option selected>CDI</option>
+                  <option>CDD</option>
+                  <option>Stage</option>
+                  <option>Esclavage</option>
+                  <option>CA</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger">Valider</button>
+          </form>
+        </div>
+        <div class="col-lg-12" id="buttonContainer">
+          <button class="btn btn-lg btn-danger" onclick="backToAccueil()">RETOUR</button>
+        </div>
     </div>
 
     <div id="petTemplate" style="display: none;">
@@ -41,10 +112,8 @@
           <div class="panel-body">
             <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
             <br/><br/>
-            <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
-            <strong>Age</strong>: <span class="pet-age">3</span><br/>
-            <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Adopt</button>
+            <strong>Date</strong>: <span class="date">test</span><br/>
+            <button class="btn btn-danger btn-read" type="button" data-id="0">Voir</button>
           </div>
         </div>
       </div>
