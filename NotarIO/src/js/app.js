@@ -10,14 +10,11 @@ App = {
 
       for (i = 0; i < data.length; i ++) {
         petTemplate.find('.panel-title').text(data[i].name);
-        var res = data[i].name.split(".");
-        petTemplate.find('img').attr('src', "/images/" + res[1] + ".png");
+        petTemplate.find('img').attr('src', data[i].picture);
         petTemplate.find('.pet-breed').text(data[i].breed);
-        //format date 
-        dateTZ = data[i].date;
-        dateFormatlll = dateTZ.toString();
-        petTemplate.find('.date').text(dateFormatlll);
-        petTemplate.find('.btn-read').attr('data-id', data[i].id);
+        petTemplate.find('.pet-age').text(data[i].age);
+        petTemplate.find('.pet-location').text(data[i].location);
+        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
 
         petsRow.append(petTemplate.html());
       }
@@ -64,30 +61,8 @@ App = {
 
 };
 
-function addDocument() {
-  document.getElementById("petsRow").style.display="none";
-  document.getElementById("CreateDocument").style.display="none";
-  document.getElementById("RegisterDocument").style.display="none";
-  document.getElementById("addDocument").style.display="flex";
-}
-function AjouterDocument() {
-  document.getElementById("addDocument").style.display="none";
-  document.getElementById("CreateDocument").style.display="none";
-  document.getElementById("RegisterDocument").style.display="flex";
-}
-function CreerDocument() {
-  document.getElementById("addDocument").style.display="none";
-  document.getElementById("RegisterDocument").style.display="flex";
-  console.log(document.getElementById("CreateDocument"));
-  document.getElementById("CreateDocument").style.display="flex";
-}
-function backToAccueil() {
-  location.reload();
-}
-
 $(function() {
   $(window).load(function() {
     App.init();
   });
 });
-
