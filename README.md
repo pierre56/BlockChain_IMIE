@@ -8,4 +8,6 @@
 - Base de donnée pour les users ?
 
 ## Livrables
-Manuel de développement => dossier architecture
+- Manuel de développement => dossier architecture
+- Doc au format md
+- Diagramme d'activité || Diagramme de séquence
