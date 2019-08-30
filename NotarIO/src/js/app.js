@@ -98,6 +98,11 @@ function FormSend(){
   var Pognon = document.getElementById("inputPognon").value ;
   var Contract = document.getElementById("inputContratType").value ;
 }
+
+function LinkSend(){
+  var Link = document.getElementById("InputLink").value;
+  var NameContrat = document.getElementById("InputNameContract").value;
+}
 $(function() {
   $(window).load(function() {
     App.init();
