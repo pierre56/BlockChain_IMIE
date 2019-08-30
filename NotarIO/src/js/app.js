@@ -89,6 +89,7 @@ function CreerDocument() {
 function backToAccueil() {
   location.reload();
 }
+
 function FormSend(){
   var Name = document.getElementById("inputName").value ;
   var DateBegin = document.getElementById("inputDateDebut").value ;
@@ -103,6 +104,7 @@ function LinkSend(){
   var Link = document.getElementById("InputLink").value;
   var NameContrat = document.getElementById("InputNameContract").value;
 }
+
 $(function() {
   $(window).load(function() {
     App.init();
