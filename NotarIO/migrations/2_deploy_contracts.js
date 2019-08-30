@@ -1,10 +1,6 @@
-const User = artifacts.require("User");
-const Contract = artifacts.require("Contract");
-const Entreprise = artifacts.require("Entreprise");
+const NotarIO = artifacts.require("NotarIO");
 
 module.exports = function(deployer) {
-  deployer.deploy(Entreprise, /*  */);
-  deployer.deploy(User, /*  */);
-  deployer.deploy(Contract, /*  */);
+  deployer.deploy(NotarIO);
 
 };
