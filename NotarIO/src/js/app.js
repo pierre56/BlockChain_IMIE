@@ -84,13 +84,20 @@ function AjouterDocument() {
 function CreerDocument() {
   document.getElementById("addDocument").style.display="none";
   document.getElementById("RegisterDocument").style.display="none";
-  console.log(document.getElementById("CreateDocument"));
   document.getElementById("CreateDocument").style.display="flex";
 }
 function backToAccueil() {
   location.reload();
 }
-
+function FormSend(){
+  var Name = document.getElementById("inputName").value ;
+  var DateBegin = document.getElementById("inputDateDebut").value ;
+  var DateEnd = document.getElementById("inputDateFin").value ;
+  var AdressEmploy = document.getElementById("inputAddress").value ;
+  var AdresseEmployer = document.getElementById("inputAddress2").value ;
+  var Pognon = document.getElementById("inputPognon").value ;
+  var Contract = document.getElementById("inputContratType").value ;
+}
 $(function() {
   $(window).load(function() {
     App.init();
