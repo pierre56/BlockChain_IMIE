@@ -45,3 +45,15 @@ https://solidity.readthedocs.io/en/v0.5.3/types.html
 
 
 # Ligne de commande utiles
+## Installation
+npm install -g truffle
+
+
+## Ganache - Lancer Blockchain
+ganache-cli -l 8000029
+
+## Truffle - Lancer migrate 
+truffle migrate
+
+## Lancer server
+npm run dev
