@@ -84,7 +84,7 @@ function AjouterDocument() {
 }
 function CreerDocument() {
   document.getElementById("addDocument").style.display="none";
-  document.getElementById("RegisterDocument").style.display="flex";
+  document.getElementById("RegisterDocument").style.display="none";
   console.log(document.getElementById("CreateDocument"));
   document.getElementById("CreateDocument").style.display="flex";
 }
