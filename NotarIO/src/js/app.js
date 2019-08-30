@@ -41,9 +41,18 @@ App = {
   },
 
   initContract: function() {
-    /*
-     * Replace me...
-     */
+    $.getJSON('NotarIO.json', function(data) {
+      // Get the necessary contract artifact file and instantiate it with truffle-contract
+      var NotarIOArtifact = data;
+      App.contracts.NotarIO = TruffleContract(NotarIOArtifact);
+    
+      // Set the provider for our contract
+      App.contracts.NotarIO.setProvider(App.web3Provider);
+    
+      // Use our contract to retrieve and mark the adopted pets
+      return App.retourContrat();
+      
+    });
 
     return App.bindEvents();
   },
@@ -52,10 +61,23 @@ App = {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
-  markAdopted: function(adopters, account) {
-    /*
-     * Replace me...
-     */
+  retourContrat: function(cdd, account) {
+          var NotarIOInstance;
+
+      App.contracts.NotarIO.deployed().then(function(instance) {
+        NotarIOInstance = instance;
+
+        return NotarIOInstance.getCDD.call();
+      }).then(function(CDDs) {
+        for (i = 0; i < CDDs.length; i++) {
+          if (CDDs[i] !== '0x0000000000000000000000000000000000000000') {
+            $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+          }
+        }
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+
   },
 
   handleAdopt: function(event) {

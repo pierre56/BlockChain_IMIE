@@ -41,8 +41,8 @@ contract NotarIO  {
 /* Struct par type de contrat 
 mapping address employee
 clef adress user / tableau CDI
-
 */
+
 /*
     struct CDI{
         Company address_company; 
@@ -112,9 +112,12 @@ clef adress user / tableau CDI
             salary : salary
         }));
     }
+
     function getCDD() public pure returns (string memory) {
         return "cdd" ;
     }
+    
+    
     /*
         Function Signature
         Function Consultation
