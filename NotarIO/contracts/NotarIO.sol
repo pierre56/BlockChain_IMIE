@@ -1,6 +1,4 @@
 pragma solidity >=0.4.21 <0.6.0;
-import './Company.sol';
-import './User.sol';
 
 /*
 contract Contract {
@@ -110,9 +108,12 @@ clef adress user / tableau CDI
             employee : employee,
             company : company,
             StartedDate : now,
-            EndedDate : StartedDate + 1 years,
+            EndedDate : StartedDate ,
             salary : salary
         }));
+    }
+    function getCDD() public pure returns (string memory) {
+        return "cdd" ;
     }
     /*
         Function Signature
