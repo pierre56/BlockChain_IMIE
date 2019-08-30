@@ -10,7 +10,7 @@ contract Contract {
     Company public company;
 
 }
-/* Document */ 
+/* Document */
 contract Document is Contract{
     
     string ipfsHash;        // IPFS hash
@@ -22,7 +22,16 @@ contract Document is Contract{
         Detail des champs du contrat de travail
         */
         string date;
+        
     }    
+    constructor(address employee, address manager, Company company) public {
+        employee = msg.sender;
+
+    }
+    function CreateDocument(address employee, address manager, Company company) public {
+        
+    }
+
     /*
         Function IPFS => non
         Function Signature => 
