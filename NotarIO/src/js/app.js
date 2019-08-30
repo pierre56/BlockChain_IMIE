@@ -12,10 +12,6 @@ App = {
         petTemplate.find('.panel-title').text(data[i].name);
         var res = data[i].name.split(".");
         petTemplate.find('img').attr('src', "/images/" + res[1] + ".png");
-<<<<<<< HEAD
-=======
-        console.log(res[1]);
->>>>>>> 5c8a4bdb74b3ada1205dee6607eae6df7c313aea
         petTemplate.find('.pet-breed').text(data[i].breed);
         //format date 
         dateTZ = data[i].date;
@@ -88,16 +84,12 @@ function AjouterDocument() {
 function CreerDocument() {
   document.getElementById("addDocument").style.display="none";
   document.getElementById("RegisterDocument").style.display="none";
-<<<<<<< HEAD
-=======
-  console.log(document.getElementById("CreateDocument"));
->>>>>>> 5c8a4bdb74b3ada1205dee6607eae6df7c313aea
   document.getElementById("CreateDocument").style.display="flex";
 }
 function backToAccueil() {
   location.reload();
 }
-<<<<<<< HEAD
+
 function FormSend(){
   var Name = document.getElementById("inputName").value ;
   var DateBegin = document.getElementById("inputDateDebut").value ;
@@ -107,9 +99,12 @@ function FormSend(){
   var Pognon = document.getElementById("inputPognon").value ;
   var Contract = document.getElementById("inputContratType").value ;
 }
-=======
 
->>>>>>> 5c8a4bdb74b3ada1205dee6607eae6df7c313aea
+function LinkSend(){
+  var Link = document.getElementById("InputLink").value;
+  var NameContrat = document.getElementById("InputNameContract").value;
+}
+
 $(function() {
   $(window).load(function() {
     App.init();
