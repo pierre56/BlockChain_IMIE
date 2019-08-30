@@ -16,11 +16,12 @@ contract Manager is User {
     // `owned` and applies it to the `close` function, which
     // causes that calls to `close` only have an effect if
     // they are made by the stored owner.
-    address public manager;    
+    address public address_manager;    
 
     constructor() public {
 
     }
+
     function setManager(address newManager) public {
         manager = newManager;
     }
@@ -35,11 +36,12 @@ contract Employee is User {
     // `owned` and applies it to the `close` function, which
     // causes that calls to `close` only have an effect if
     // they are made by the stored owner.
-    address public employee;    
+    address public address_employee;    
     
     constructor() public {
 
     }
+
     function setEmployee(address newEmployee) public {
         employee = newEmployee;
     }
