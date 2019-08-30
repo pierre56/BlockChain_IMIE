@@ -11,20 +11,22 @@ contract Contract {
 /* Document */
 contract Document is Contract{
 
-    string ipfsHash;        // IPFS hash
+    string  ipfsHash  ;        // IPFS hash
     string title;           // title
     uint256 uploadedOn;     // Uploaded timestamp
     string path_miniature;  // Path du chemin des miniatures
 
-    constructor(employee, manager, company, string ipfsHash, string title, uint256 uploadedOn) public {
+/*
+    constructor(Employee, Manager, Company, string memory ipfsHash, string memory title, uint256 memory uploadedOn) public {
         
 
     }
-
+*/
+/*
     function CreateDocument(address employee, address manager, Company company, string ipfsHash, string title, uint256 uploadedOn, string path_miniature) public {
         
     }
-
+*/
     /*
         Function IPFS => non
         Function Signature => 
@@ -52,9 +54,9 @@ clef adress user / tableau CDI
         uint salary ;
     }
     struct CDD {
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager;
+        Company company; 
+        Employee employee;
+        Manager manager;
 
         uint StartedDate;
         uint EndedDate;
@@ -87,18 +89,17 @@ clef adress user / tableau CDI
     A faire : CDD, esclavage
     */
 
-    function addCDD( address_manager, address_company, address_employee, uint memory StartedDate, uint memory EndedDate, uint memory salary ) 
+    function addCDD( Manager manager,Company company,Employee employee, uint StartedDate, uint EndedDate, uint salary ) 
     public  {
-        cdis[employee].push(CDD({
-            Manager : address_manager,
-            Employee : address_employee,
-            Company : address_company,
+        cdis[company.address_company].push(CDD({
+            Manager : manager.address_manager,
+            Employee : employee.address_employee,
+            Company : company.address_company,
             StartedDate : now,
             EndedDate : StartedDate + 1 years,
             salary : salary
         }));
 
-        return true;
     }
 
 

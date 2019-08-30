@@ -23,11 +23,11 @@ contract Manager is User {
     }
 
     function setManager(address newManager) public {
-        manager = newManager;
+        Manager = newManager;
     }
 
     function getManager() public view returns (address) {
-        return manager ;
+        return Manager ;
     }
 }
 
@@ -43,10 +43,10 @@ contract Employee is User {
     }
 
     function setEmployee(address newEmployee) public {
-        employee = newEmployee;
+        Employee = newEmployee;
     }
 
     function getEmployee() public view returns (address) {
-        return employee ;
+        return Employee ;
     }
 }
