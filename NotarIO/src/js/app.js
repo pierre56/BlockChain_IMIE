@@ -83,11 +83,8 @@ App = {
   handleAdopt: function(event) {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    var CDDId = parseInt($(event.target).data('id'));
 
-    /*
-     * Replace me...
-     */
   }
 
 };

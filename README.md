@@ -52,8 +52,21 @@ npm install -g truffle
 ## Ganache - Lancer Blockchain
 ganache-cli -l 8000029
 
+### Restaure le même jeu d'adresse
+Mnemonic:      
+'''athlete sentence drift drill grape admit such fee skill magnet broccoli valve'''
+
+
 ## Truffle - Lancer migrate 
 truffle migrate
 
 ## Lancer server
 npm run dev
+
+______________
+# Faire structs
+- Employee
+- Employer
+- contract (CDD, CDI)
+- 
+
