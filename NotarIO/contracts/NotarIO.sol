@@ -1,16 +1,6 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 
-    /*
-    Company public company;
-    Employee public employee;
-    Manager public manager;
-*/
-//}
-
-
-//}
-
 /* Smart_Contract */
 contract NotarIO  {
 
@@ -18,64 +8,49 @@ contract NotarIO  {
         string name;
         string  siren;
         address  address_company;
-        address public company_address;
-
+        address  company_address ;
     }
 
     struct employee{
         string name ;
-        address address_employee ;
+        address payable address_employee ;
 
     }
 //mapping address employee
 //clef adress user / tableau CDI
     
-    mapping(address => employee[]) employees;
-    
+ 
+/*
 contract Smart_NotarIO is NotarIO{
-// Struct par type de contrat 
-
+// Struct par type de contrat
+*/
     struct CDI{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager;
-
+ 
         uint StartedDate;
         uint EndedDate;
-
         uint salary ;
     }
-    
+
     struct CDD {
-        address company;
-        address manager;
-        employee address_employee;
         uint StartedDate;
         uint EndedDate;
         uint salary ;
     }
-    
-    struct Stage{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager;
 
+    struct Stage{
         uint StartedDate;
         uint EndedDate;
         uint salary ;
     }
 
     struct Esclavage{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager; 
         uint StartedDate;
 
     }
 
-    
+   mapping(address => employee[]) employees;
+
     //mapping(address => CDI[]) cdis;
-    
   //mapping(address => Stage[]) stages;
     mapping(address => Esclavage[]) esclaves;
 
@@ -83,19 +58,19 @@ contract Smart_NotarIO is NotarIO{
     Afin d'avoir au moins 1/2 trucs fonctionnels
     A faire : CDD, esclavage
     */
-
-    function slaveContract(type name) {
+/*
+    function slaveContract(type name) public {
         
     }
-
-    function addCDD( address manager, address company, address employee, uint StartedDate, uint EndedDate, uint salary ) 
+*/
+    function addCDD( address manager, address company, address employee, uint StartedDate, uint EndedDate, uint salary )
     public  {
         cdds[company].push(CDD({
             manager : manager,
             employee : employee,
             company : company,
-            StartedDate : now,
-            EndedDate : StartedDate ,
+            StartedDate : block.timestamp,
+            EndedDate : StartedDate,
             salary : salary
         }));
     }

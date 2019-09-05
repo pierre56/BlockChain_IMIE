@@ -1,2 +1,6 @@
 
 *.pptx
+
+NotarIO/node_modules/
+
+NotarIO/.idea/
