@@ -1,5 +1,5 @@
 {
-  "name": "pet-shop",
+  "name": "NotarIO 1.1",
   "version": "1.0.0",
   "description": "",
   "main": "truffle.js",
@@ -14,5 +14,11 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "ipfs": "^0.37.1",
+    "mocha": "^6.2.0",
+    "node-gyp": "^5.0.3",
+    "truffle-assertions": "^0.9.1"
   }
 }

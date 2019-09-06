@@ -1,17 +1,97 @@
 pragma solidity >=0.4.21 <0.6.0;
 
+
+/* Smart_Contract */
+contract NotarIO  {
+
+    struct Company{
+        string name;
+        string  siren;
+        address  address_company;
+        address  company_address ;
+    }
+
+    struct employee{
+        string name ;
+        address payable address_employee ;
+
+    }
+//mapping address employee
+//clef adress user / tableau CDI
+    
+ 
 /*
-contract Contract {
-    /*
-    Company public company;
-    Employee public employee;
-    Manager public manager;
+contract Smart_NotarIO is NotarIO{
+// Struct par type de contrat
 */
-//}
+    struct CDI{
+ 
+        uint StartedDate;
+        uint EndedDate;
+        uint salary ;
+    }
+
+    struct CDD {
+        uint StartedDate;
+        uint EndedDate;
+        uint salary ;
+    }
+
+    struct Stage{
+        uint StartedDate;
+        uint EndedDate;
+        uint salary ;
+    }
+
+    struct Esclavage{
+        uint StartedDate;
+
+    }
+
+   mapping(address => employee[]) employees;
+
+    //mapping(address => CDI[]) cdis;
+  //mapping(address => Stage[]) stages;
+    mapping(address => Esclavage[]) esclaves;
+
+    /*
+    Afin d'avoir au moins 1/2 trucs fonctionnels
+    A faire : CDD, esclavage
+    */
+/*
+    function slaveContract(type name) public {
+        
+    }
+*/
+    function addCDD( address manager, address company, address employee, uint StartedDate, uint EndedDate, uint salary )
+    public  {
+        cdds[company].push(CDD({
+            manager : manager,
+            employee : employee,
+            company : company,
+            StartedDate : block.timestamp,
+            EndedDate : StartedDate,
+            salary : salary
+        }));
+    }
+
+
+
+    function getCDD() public pure returns (string memory) {
+        return "cdd" ;
+    }
+   /* function getCDDs() public  returns (cdds) {
+        return cdds ;
+    }    
+    /*
+        Function Signature
+        Function Consultation
+    */
+}
 
 /* Document */
 /*
-contract Document is Contract{
+contract Document_NotarIO is NotarIO{
 
     string  ipfsHash  ;        // IPFS hash
     string title;           // title
@@ -32,91 +112,3 @@ contract Document is Contract{
         Function Consultation => 
     */
 
-
-//}
-
-/* Smart_Contract */
-contract NotarIO  {
-
-/* Struct par type de contrat 
-mapping address employee
-clef adress user / tableau CDI
-
-*/
-/*
-    struct CDI{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager;
-
-        uint StartedDate;
-        uint EndedDate;
-
-        uint salary ;
-    }
-    */
-    struct CDD {
-        /*
-        Company company; 
-        Employee employee;
-        Manager manager;
-        */
-        address company;
-        address manager;
-        address employee;
-        uint StartedDate;
-        uint EndedDate;
-        uint salary ;
-    }
-    struct Company{
-        string  siren;
-        address  address_company;
-    }
-    /*
-    struct Stage{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager;
-
-        uint StartedDate;
-        uint EndedDate;
-        uint salary ;
-    }
-    struct Esclavage{
-        Company address_company; 
-        Employee address_employee;
-        Manager address_manager; 
-        uint StartedDate;
-
-    }
-*/
-    //mapping(address => CDI[]) cdis;
-    mapping(address => CDD[]) cdds;
-    mapping(address => Company) companies;
-  /*  mapping(address => Stage[]) stages;
-    mapping(address => Esclavage[]) esclaves;
-*/
-    /*
-    Afin d'avoir au moins 1/2 trucs fonctionnels
-    A faire : CDD, esclavage
-    */
-
-    function addCDD( address manager, address company, address employee, uint StartedDate, uint EndedDate, uint salary ) 
-    public  {
-        cdds[company].push(CDD({
-            manager : manager,
-            employee : employee,
-            company : company,
-            StartedDate : now,
-            EndedDate : StartedDate ,
-            salary : salary
-        }));
-    }
-    function getCDD() public pure returns (string memory) {
-        return "cdd" ;
-    }
-    /*
-        Function Signature
-        Function Consultation
-    */
-}
