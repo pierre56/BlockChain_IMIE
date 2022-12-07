@@ -16,7 +16,7 @@
     "lite-server": "^2.3.0"
   },
   "dependencies": {
-    "ipfs": "^0.37.1",
+    "ipfs": "^0.65.0",
     "mocha": "^6.2.0",
     "node-gyp": "^5.0.3",
     "truffle-assertions": "^0.9.1"
