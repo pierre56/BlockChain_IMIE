@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "ipfs": "^0.37.1",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "node-gyp": "^5.0.3",
     "truffle-assertions": "^0.9.1"
   }
